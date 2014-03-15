@@ -1,24 +1,68 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Hello, World</title>
-    <style>
+    <head>
+        <meta charset="utf-8">
+        <title>Hello, World</title>
+        <style>
+       
+        body {
+            font: 18px/30px helvetica, sans-serif;
+        }
 
-    body {
-        font: 18px/30px helvetica, sans-serif;
-    }
+        span {
+            background: #ff9;
+        }
 
-     </style>
+        </style>
     </head>
     <body>
-        Hello, World
-    </body>
-</html>
-        <a href="https://github.com/katherinetcoloma">
-            <img src="https://github.com/katherinetcoloma.png" width="80" height="80" alt="My GitHub account">
-        </a>
+    <div id="content">
+    <p> Theirs was a true love, thought <span id="name-1" data-prompt="name-1">_________</span>,
+    one to stand the test of time. <span id="name-2" data-prompt="name-2">__________</span>, 
+    his soul-mate, was somehow even more <span id="adjective-1" data-prompt="ajective-1">_________</span> than 
+    the day they first met, he realized. And even though <span id="pronoun" data-prompt="pronoun">_________</span> 
+    always seemed to say something interesting, it ultimately didn't matter, as he 
+    was <span id="adjective-2" data-prompt="adjective-2"> _________</span> just to hear her soft, melodic voice. 
+    Someday soon, he imagined, they would have children together, and 
+    their <span id="noun" data-prompt="noun">_________</span> would blossom as a family. 
+    These wonderful thoughts made him feel warm and tingly inside. Suddenly, 
+    without warning, Tony was yanked from his daydream. He let out a long sigh,
+    realizing that that would be the courier with the divorce papers.</p>
+<script>
+var placeholders = [
+    'name-1',
+    'name-2',
+    'adjective-1',
+    'pronoun',
+    'adjective-2',
+    'noun'
+];
 
-        My name is Katherine Coloma. I am currently attending at City College of New York and majoring in Studio Art. I will soon be graduating on May 2014.  I am working as a optometric technician at Malik Eye Care.  I was born in Ecuador and came to the United States by the age of 11. Some of my mayor interests are photography and traveling.  
-    </p>
-  </body>
+          for (var i = 0; i < placeholders.length; i++) {
+            var id = placeholders[i];
+            var span = document.getElementById(id);
+            span.addEventListener('click', replaceWord, false);
+            }
+
+			function replaceWord(e){
+			var span = e.target;
+			var wordPrompt = span.getAttribute('data-prompt');
+                var word = prompt('Please enter a ' + span.innerHTML);
+                if(word!==null){
+                span.innerHTML = word;
+            }
+        }
+
+/*
+document.getElementById('name-1').innerHTML = prompt('[1/6] Enter a name-1');
+document.getElementById('name-2').innerHTML = prompt('[2/6] Enter a name-2');
+document.getElementById('adjective-1').innerHTML  = prompt('[3/6] Enter a adjective-1');
+document.getElementById('pronoun').innerHTML = prompt('[4/6] Enter a pronoun');
+document.getElementById('adjective-2').innerHTML = prompt('[5/6] Enter a adjective-2');
+document.getElementById('noun').innerHTML = prompt('[6/6] Enter a noun'); 
+
+*/
+</script>
+</div>
+</body>
 </html>
